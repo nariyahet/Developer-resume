@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eef2f5;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  line-height: 1.5;
+  color: #1e293b;
+}
+
+.resume-wrapper {
+  max-width: 1000px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem 2.8rem;
+  transition: all 0.2s;
+}
+
+/* ----- PRINT STYLES (for PDF export) ----- */
+@media print {
+  body {
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+  }
+
+  .resume-wrapper {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0.5in;
+    max-width: 100%;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .project-item {
+    break-inside: avoid;
+  }
+
+  .skills-grid {
+    break-inside: avoid;
+  }
+}
+
+/* ----- TYPOGRAPHY & UTILITY ----- */
+.text-muted {
+  color: #64748b;
+}
+
+.text-accent {
+  color: #2563eb;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #e2e8f0;
+  margin: 1.2rem 0;
+}
+
+/* ----- HEADER / CONTACT ----- */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.header-left h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.header-left .role-tag {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: #eff6ff;
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  border-radius: 20px;
+  margin-top: 0.2rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.5rem;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.contact-links a {
+  color: #1e293b;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.15s;
+}
+
+.contact-links a:hover {
+  color: #2563eb;
+}
+
+.contact-links i {
+  width: 1.1rem;
+  color: #475569;
+}
+
+/* ----- SECTIONS ----- */
+.section {
+  margin-top: 1.6rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+  border-bottom: 3px solid #2563eb;
+  padding-bottom: 0.35rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+/* ----- SUMMARY ----- */
+.summary-text {
+  font-size: 0.98rem;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ----- SKILLS (grid) ----- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem 1.5rem;
+}
+
+.skills-grid .skill-cat {
+  font-weight: 600;
+  color: #0f172a;
+  margin-top: 0.2rem;
+}
+
+.skills-grid .skill-items {
+  color: #1e293b;
+  margin-bottom: 0.3rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  background: #f1f5f9;
+  padding: 0.15rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  margin: 0.2rem 0.2rem 0.2rem 0;
+}
+
+/* ----- PROJECTS ----- */
+.project-item {
+  margin-bottom: 1.4rem;
+}
+
+.project-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.project-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.project-stack {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 0.1rem 0.8rem;
+  border-radius: 16px;
+}
+
+.project-desc {
+  margin-top: 0.25rem;
+  padding-left: 0.2rem;
+  list-style: none;
+}
+
+.project-desc li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.project-desc li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* ----- EDUCATION & TOOLS ----- */
+.edu-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.edu-item .degree {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.edu-item .uni {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.edu-item .year {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.edu-detail {
+  margin-top: 0.15rem;
+  font-size: 0.92rem;
+  color: #475569;
+}
+
+.tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+.tools-list span {
+  background: #f8fafc;
+  padding: 0.1rem 0.6rem;
+  border-radius: 12px;
+}
+
+/* ----- BUTTON (print/pdf) ----- */
+.pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.6rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 0.8rem;
+}
+
+.pdf-btn:hover {
+  background: #1e293b;
+}
+
+.pdf-btn i {
+  font-size: 1rem;
+}
+
+/* ----- RESPONSIVE ----- */
+@media (max-width: 700px) {
+  .resume-wrapper {
+    padding: 1.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .edu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-links {
+    gap: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
