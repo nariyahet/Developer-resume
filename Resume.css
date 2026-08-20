@@ -6,7 +6,7 @@
 
 body {
   background: #eef2f5;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
   padding: 2rem 1rem;
@@ -24,7 +24,6 @@ body {
   transition: all 0.2s;
 }
 
-/* ----- PRINT STYLES (for PDF export) ----- */
 @media print {
   body {
     background: #ffffff;
@@ -50,9 +49,17 @@ body {
   .skills-grid {
     break-inside: avoid;
   }
+
+  .section {
+    break-inside: avoid;
+  }
+
+  a {
+    color: #1e293b;
+    text-decoration: none;
+  }
 }
 
-/* ----- TYPOGRAPHY & UTILITY ----- */
 .text-muted {
   color: #64748b;
 }
@@ -68,7 +75,6 @@ hr {
   margin: 1.2rem 0;
 }
 
-/* ----- HEADER / CONTACT ----- */
 .header {
   display: flex;
   flex-wrap: wrap;
@@ -103,7 +109,8 @@ hr {
   font-size: 0.9rem;
 }
 
-.contact-links a {
+.contact-links a,
+.contact-links span {
   color: #1e293b;
   text-decoration: none;
   display: inline-flex;
@@ -121,7 +128,6 @@ hr {
   color: #475569;
 }
 
-/* ----- SECTIONS ----- */
 .section {
   margin-top: 1.6rem;
 }
@@ -138,18 +144,16 @@ hr {
   display: inline-block;
 }
 
-/* ----- SUMMARY ----- */
 .summary-text {
   font-size: 0.98rem;
   color: #1e293b;
   line-height: 1.6;
 }
 
-/* ----- SKILLS (grid) ----- */
 .skills-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.3rem 1.5rem;
+  gap: 0.5rem 1.5rem;
 }
 
 .skills-grid .skill-cat {
@@ -172,7 +176,6 @@ hr {
   margin: 0.2rem 0.2rem 0.2rem 0;
 }
 
-/* ----- PROJECTS ----- */
 .project-item {
   margin-bottom: 1.4rem;
 }
@@ -182,6 +185,7 @@ hr {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
+  gap: 0.4rem;
 }
 
 .project-name {
@@ -221,7 +225,25 @@ hr {
   font-weight: 700;
 }
 
-/* ----- EDUCATION & TOOLS ----- */
+.project-item p {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.project-item p strong {
+  color: #0f172a;
+}
+
+.project-item a {
+  color: #2563eb;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.project-item a:hover {
+  text-decoration: underline;
+}
+
 .edu-item {
   display: flex;
   flex-wrap: wrap;
@@ -253,23 +275,27 @@ hr {
 .tools-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem 1.2rem;
+  gap: 0.4rem 1.2rem;
   font-size: 0.95rem;
 }
 
 .tools-list span {
   background: #f8fafc;
-  padding: 0.1rem 0.6rem;
+  padding: 0.15rem 0.7rem;
   border-radius: 12px;
 }
 
-/* ----- BUTTON (print/pdf) ----- */
+.tools-list i {
+  color: #2563eb;
+  width: 1.2rem;
+}
+
 .pdf-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   background: #0f172a;
-  color: #fff;
+  color: #ffffff;
   border: none;
   padding: 0.6rem 1.6rem;
   border-radius: 40px;
@@ -288,16 +314,24 @@ hr {
   font-size: 1rem;
 }
 
-/* ----- RESPONSIVE ----- */
 @media (max-width: 700px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
   .resume-wrapper {
     padding: 1.5rem;
+    border-radius: 8px;
   }
 
   .header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.8rem;
+  }
+
+  .header-left h1 {
+    font-size: 2rem;
   }
 
   .skills-grid {
@@ -310,13 +344,54 @@ hr {
     gap: 0.2rem;
   }
 
+  .project-stack {
+    font-size: 0.8rem;
+  }
+
   .edu-item {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.2rem;
   }
 
   .contact-links {
     gap: 0.5rem 1rem;
     font-size: 0.85rem;
+    flex-direction: column;
+  }
+
+  .summary-text {
+    font-size: 0.94rem;
+  }
+
+  .project-desc li {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-wrapper {
+    padding: 1.2rem;
+  }
+
+  .header-left h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-left .role-tag {
+    font-size: 0.85rem;
+  }
+
+  .section {
+    margin-top: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.65rem;
   }
 }
